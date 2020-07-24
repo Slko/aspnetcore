@@ -9,14 +9,10 @@ using Microsoft.Identity.Web.UI;
 using Microsoft.Identity.Web.TokenCacheProviders.InMemory;
 #endif
 #if (OrganizationalAuth)
-
 #if (MultiOrgAuth)
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 #endif
 using Microsoft.AspNetCore.Authorization;
-#endif
-#if (IndividualB2CAuth)
-
 #endif
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;

@@ -395,7 +395,7 @@ namespace Templates.Test
                 "blazorwasmhostedaadb2capi", "-ho",
                 "-au", "IndividualB2C",
                 "--called-api-url", "\"https://graph.microsoft.com\"",
-                "--called-api-scopes", "user.readwrite"
+                "--called-api-scopes", "user.readwrite",
                 "--aad-b2c-instance", "example.b2clogin.com",
                 "-ssp", "b2c_1_siupin",
                 "--client-id", "clientId",
@@ -425,7 +425,7 @@ namespace Templates.Test
                 "blazorwasmstandaloneaadb2capi",
                 "-au", "IndividualB2C",
                 "--called-api-url", "\"https://graph.microsoft.com\"",
-                "--called-api-scopes", "user.readwrite"
+                "--called-api-scopes", "user.readwrite",
                 "--aad-b2c-instance", "example.b2clogin.com",
                 "-ssp", "b2c_1_siupin",
                 "--client-id", "clientId",
