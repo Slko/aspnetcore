@@ -60,11 +60,11 @@ namespace Microsoft.AspNetCore.Razor.Tasks
             const string chars = "0123456789abcdefghijklmnopqrstuvwxyz";
 
             var result = new char[10];
-            var dividend = new BigInteger(hash.AsSpan().Slice(0, 8).ToArray());
+            var dividend = new BigInteger(hash.AsSpan().Slice(0, 9).ToArray()).Abs();
             for (var i = 0; i < 10; i++)
             {
                 dividend = BigInteger.DivRem(dividend, 36, out var remainder);
-                result[i] = chars[(int)remainder];
+                result[i] = chars[(uint)remainder];
             }
 
             return new string(result);
