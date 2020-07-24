@@ -1,7 +1,7 @@
 ﻿@page "/showprofile"
 
 @using Microsoft.Graph
-@inject Microsoft.Graph.GraphServiceClient _graphServiceClient
+@inject Microsoft.Graph.GraphServiceClient GraphServiceClient
 
 <h1>Me</h1>
 
@@ -47,7 +47,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        user = await _graphServiceClient.Me.Request().GetAsync();
+        user = await GraphServiceClient.Me.Request().GetAsync();
         photo = await GetPhoto();
     }
 
@@ -57,7 +57,7 @@ else
 
         try
         {
-            using (var photoStream = await _graphServiceClient.Me.Photo.Content.Request().GetAsync())
+            using (var photoStream = await GraphServiceClient.Me.Photo.Content.Request().GetAsync())
             {
                 byte[] photoByte = ((System.IO.MemoryStream)photoStream).ToArray();
                 photo = Convert.ToBase64String(photoByte);

@@ -136,12 +136,6 @@
             ]
         },
         {
-          "condition": "(!GenerateApiOrGraph)",
-          "rename": {
-            "Shared/NavMenu.NoGraphOrApi.razor": "Shared/NavMenu.razor"
-          }
-        },
-        {
           "condition": "(!GenerateGraph)",
           "exclude": [
             "Services/MicrosoftGraphServiceExtensions.cs",
@@ -151,13 +145,24 @@
             ]
         },
         {
+          "condition": "(!GenerateApiOrGraph)",
+          "rename": {
+            "Shared/NavMenu.NoGraphOrApi.razor": "Shared/NavMenu.razor"
+          },
+          "exclude": [
+            "Shared/NavMenu.CallsMicrosoftGraph.razor",
+            "Shared/NavMenu.CallsWebApi.razor"
+          ]
+        },
+        {
           "condition": "(GenerateGraph)",
           "rename": {
             "Shared/NavMenu.CallsMicrosoftGraph.razor": "Shared/NavMenu.razor"
           },
           "exclude": [
-            "Shared/NavMenu.NoGraphOrApi.razor"
-            ]
+            "Shared/NavMenu.NoGraphOrApi.razor",
+            "Shared/NavMenu.CallsWebApi.razor"
+          ]
         },
         {
           "condition": "(GenerateApi)",
@@ -165,8 +170,9 @@
             "Shared/NavMenu.CallsWebApi.razor": "Shared/NavMenu.razor"
           },
           "exclude": [
-            "Shared/NavMenu.NoGraphOrApi.razor"
-            ]
+            "Shared/NavMenu.NoGraphOrApi.razor",
+            "Shared/NavMenu.CallsMicrosoftGraph.razor"
+          ]
         }
       ]
     }
