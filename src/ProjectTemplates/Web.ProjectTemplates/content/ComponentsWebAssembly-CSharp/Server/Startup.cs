@@ -19,7 +19,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
 #if (IndividualLocalAuth)
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+using ComponentsWebAssembly_CSharp.Server.Data;
+using ComponentsWebAssembly_CSharp.Server.Models;
 #endif
 #if (GenerateGraph)
 using Microsoft.Graph;
